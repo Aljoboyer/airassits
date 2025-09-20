@@ -90,8 +90,8 @@ app.get('/health', (req, res) => {
 app.get("/hume-token", async (req, res) => {
   try {
     const accessToken = await fetchAccessToken({
-      apiKey: 'oU2jSV5HF5oG3YYmBWqyoyg7Vpk3e2HeuW8cDkG1oMD5X2QF',
-      secretKey: 'aMAwqACRlfXFRQIejbb6QxwvU5m2ottBXnqzd5ClxIWyaSMw2eCa27V3vZqlcU3N',
+      apiKey: process.env.HUME_SECRET,
+      secretKey: process.env.HUME_API,
     });
 
     res.json({ accessToken });
